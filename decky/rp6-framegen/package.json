@@ -1,0 +1,6 @@
+{
+  "name": "rp6-framegen",
+  "version": "0.1.0",
+  "description": "Frame generation for the Retroid Pocket 6: Adreno hardware block-match motion estimation, x2/x3/x4, per-game toggle",
+  "type": "module"
+}

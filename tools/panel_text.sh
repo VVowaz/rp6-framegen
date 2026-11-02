@@ -1,0 +1,3 @@
+#!/bin/sh
+# Render the RP6 FrameGen Decky panel off-screen inside Steam and print its text (smoke test).
+exec python3 -I "$(dirname "$0")/cef.py" 'new Promise((res) => { try { const mod = DFL.findModule((m) => m && typeof m === "object" && typeof m.createRoot === "function"); const p = DeckyPluginLoader.plugins.find(x => x.name === "RP6 FrameGen"); const div = document.createElement("div"); div.style.display = "none"; document.body.appendChild(div); const root = mod.createRoot(div); root.render(p.content); setTimeout(() => { const t = div.innerText || div.textContent; root.unmount(); div.remove(); res(t); }, 3000); } catch (e) { res("ERR " + e.message); } })'
